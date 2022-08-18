@@ -142,7 +142,10 @@ export class userscontrollers {
                 throw new Error(`error user not found!`)
             }
             // find Article user
-            const artilesUserFind = await article.find({userId: user._id}).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).limit(10)
+            const artilesUserFind = await article.find({userId: user._id})
+            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+            .limit(10)
+            .populate('users')
 
             // return article by user
             return response.status(200).send(artilesUserFind)
@@ -171,7 +174,7 @@ export class userscontrollers {
              const artilesUserFind = await article.find({userId: user._id})
              .skip(perPage * page)
              .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-             .limit(perPage)
+             .limit(perPage).populate('users')
 
              // return response all post
             return response.status(200).send(artilesUserFind)

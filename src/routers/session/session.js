@@ -1,5 +1,5 @@
 import express from 'express'
-import { auth } from '../../middleware/auth/Auth'
+import { auth } from '../../middleware/auth/Auth.js'
 const refreshtokenRouter = express.Router()
 
 let RouterRefreshToken = (app)=>{

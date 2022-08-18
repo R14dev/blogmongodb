@@ -41,6 +41,21 @@ export class postscontrollers {
             throw error
         }
     }
+    static async Update(request,response){
+        try {
+            const {description,title} = request.body
+            const {userid,id} = request.params
+
+            if(!userid || !description || !title || !id){
+                response.status(400)
+                throw new Error('error invalid params !')
+            }
+            await article.updateOne({_id:id,userId:userid},{description,title})
+            return response.status(200).send()
+        } catch (error) {
+            throw error
+        }
+    }
     static async PostCreate(request,response){
         try {
             // destruct params

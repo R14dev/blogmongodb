@@ -1,6 +1,6 @@
 import Queue from 'bull'
-import * as TaksMailer from ',/taks/index.js'
-import redisConfig from '../redisconfiguration/redis.config'
+import * as TaksMailer from './task/index.js'
+import redisConfig from '../redisconfiguration/redis.config.js'
 
 
 const Queues = Object.values(TaksMailer).map(Task=> ({

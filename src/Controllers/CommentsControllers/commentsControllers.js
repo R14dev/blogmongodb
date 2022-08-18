@@ -1,6 +1,4 @@
-
 import  comments  from "../../models/comments/comments.js";
-import { Logger } from "../../util/help/help.js";
 
 export class commentsControllers {
    static async commentsUpdate (request,response) {

@@ -1,6 +1,6 @@
 import jsonwebtoken from "jsonwebtoken";
-import token from "../../models/token/token";
-import { help } from "../../util/help/help";
+import token from "../../models/token/token.js";
+import { help } from "../../util/help/help.js";
 
 
 export class auth{

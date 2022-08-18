@@ -1,5 +1,5 @@
-import commentsRouters from 'express'
-import  {commentsControllers}  from '../../Controllers/CommentsControllers/commentsControllers'
+import express from 'express'
+import  {commentsControllers}  from '../../Controllers/CommentsControllers/commentsControllers.js'
 import {auth}  from '../../middleware/auth/Auth.js'
 
 const commentsRouters =   express.Router()
